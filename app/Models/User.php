@@ -61,6 +61,10 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
+    public function following(){
+        return $this->belongsToMany(Profile::class);
+    }
+
     /* 
         belongsTo and belongsToMany - you're telling Laravel that this table holds the foreign key that connects it to the other table.
         hasOne and hasMany - you're telling Laravel that this table does not have the foreign key.
